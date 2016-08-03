@@ -1,0 +1,15 @@
+command:
+  dpkg --get-selections | grep httpie:
+    exit-status: 0
+    stdout: []
+    stderr:
+    - httpie                                          install
+    timeout: 10000
+  dpkg --get-selections | grep curl:
+    exit-status: 0
+    stdout: []
+    stderr:
+    - curl                                            install
+    - libcurl3:amd64                                  install
+    - libcurl3-gnutls:amd64                           install
+    timeout: 10000
