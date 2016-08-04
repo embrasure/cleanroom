@@ -29,6 +29,15 @@ and displays colorized responses. HTTPie can be used for testing, debugging, and
 
 ## Install
 
-`docker pull embrasure/cleanroom`
+`$ docker pull embrasure/cleanroom`
 
 ## Usage
+
+curl GET example
+`$ docker run -it --rm embrasure/cleanroom curl -X GET https://example.org`
+
+http GET example
+`$ docker run -it --rm embrasure/cleanroom http https://example.org`
+
+curl download to mapped volume
+`$ docker run -it --rm -v $(pwd):/scratch embrasure/cleanroom curl -L https://github.com/aelsabbahy/goss/releases/download/v0.2.1/goss-linux-amd64 > /scratch`
