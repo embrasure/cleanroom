@@ -9,4 +9,6 @@ RUN curl -L https://github.com/aelsabbahy/goss/releases/download/v0.2.1/goss-lin
 
 RUN mkdir /tmp/goss
 
+RUN mkdir /scratch
+
 RUN update-ca-certificates
