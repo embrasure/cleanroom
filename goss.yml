@@ -1,7 +1,5 @@
 package:
   curl:
-    # required attributes
     installed: true
-  httpie::
-    # required attributes
+  httpie:
     installed: true
