@@ -8,12 +8,9 @@ dependencies:
     - docker build -t embrasure/cleanroom .
     - mkdir goss
     - cp goss.yml ./goss
-    - curl -L https://github.com/aelsabbahy/goss/releases/download/v0.1.10/goss-linux-amd64 > ./goss/goss
-    - chmod +rx ./goss/goss
 test:
   override:
-    - docker run -d -v ${PWD}/goss:/tmp/goss --name test-container embrasure/cleanroom; sleep 5
-    - sudo lxc-attach -n "$(docker inspect --format "{{.Id}}" test-container)" -- bash -c '/tmp/goss/goss -g /tmp/goss/goss.yml validate --format junit'
+    - docker run -it --rm -v $(pwd)/goss:/tmp/goss embrasure/cleanroom goss -g /tmp/goss/goss.yml validate --format junit
 deployment:
   hub:
     branch: master
