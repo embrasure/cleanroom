@@ -33,38 +33,38 @@ and displays colorized responses. HTTPie can be used for testing, debugging, and
 
 For ease of use, it is recommended that you configure an alias for the one or more of the following commands:
 
-`$ alias curl='docker run -it --rm embrasure/cleanroom curl'
+`$ alias curl='docker run -it --rm embrasure/cleanroom curl'`
 
-`$ alias http='docker run -it --rm embrasure/cleanroom http'
+`$ alias http='docker run -it --rm embrasure/cleanroom http'`
 
 If you wish for this alias to persist on reboot, you can append this line to your `~/.bashrc` (or similiar file):
 
-$ alias curl >> ~/.bashrc
+`$ alias curl >> ~/.bashrc`
 
-$ alias http >> ~/.bashrc
+`$ alias http >> ~/.bashrc`
 
 ## Usage
 
-#####curl GET example
+####### curl GET example
 
 `$ docker run -it --rm embrasure/cleanroom curl -X GET https://example.org`
 
-#####HTTPie GET example
+####### HTTPie GET example
 
 `$ docker run -it --rm embrasure/cleanroom http https://example.org`
 
-#####curl download to mapped volume
+####### curl download to mapped volume
 
 `$ docker run -it --rm -v $(pwd):/scratch embrasure/cleanroom curl -L https://commons.wikimedia.org/wiki/Example_images#/media/File:Example.jpg -o Example.jpg`
 
-#####HTTPie download to mapped volume
+####### HTTPie download to mapped volume
 
 `$ docker run -it --rm -v $(pwd):/scratch embrasure/cleanroom http -d https://commons.wikimedia.org/wiki/Example_images#/media/File:Example.jpg -o Example2.jpg`
 
-#####curl GET with custom CA example
+####### curl GET with custom CA example
 
 `$ docker run -it --rm -v /yourcertlocation/:/usr/local/share/ca-certificates/ -e CUSTOM_CA=true embrasure/cleanroom curl -X GET https://example.org`
 
-#####HTTPie GET with custom CA example
+####### HTTPie GET with custom CA example
 
 `$ docker run -it --rm -v /yourcertlocation/:/usr/local/share/ca-certificates/ -e CUSTOM_CA=true embrasure/cleanroom http https://example.org`
