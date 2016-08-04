@@ -34,16 +34,18 @@ and displays colorized responses. HTTPie can be used for testing, debugging, and
 For ease of use, it is recommended that you configure an alias for the one or more of the following commands:
 
 `$ alias curl='docker run -it --rm embrasure/cleanroom curl'
+
 `$ alias http='docker run -it --rm embrasure/cleanroom http'
 
 If you wish for this alias to persist on reboot, you can append this line to your `~/.bashrc` (or similiar file):
 
 $ alias curl >> ~/.bashrc
+
 $ alias http >> ~/.bashrc
 
 ## Usage
 
-curl GET example
+#####curl GET example
 
 `$ docker run -it --rm embrasure/cleanroom curl -X GET https://example.org`
 
