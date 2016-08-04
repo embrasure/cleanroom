@@ -49,22 +49,22 @@ $ alias http >> ~/.bashrc
 
 `$ docker run -it --rm embrasure/cleanroom curl -X GET https://example.org`
 
-HTTPie GET example
+#####HTTPie GET example
 
 `$ docker run -it --rm embrasure/cleanroom http https://example.org`
 
-curl download to mapped volume
+#####curl download to mapped volume
 
 `$ docker run -it --rm -v $(pwd):/scratch embrasure/cleanroom curl -L https://commons.wikimedia.org/wiki/Example_images#/media/File:Example.jpg -o Example.jpg`
 
-HTTPie download to mapped volume
+#####HTTPie download to mapped volume
 
 `$ docker run -it --rm -v $(pwd):/scratch embrasure/cleanroom http -d https://commons.wikimedia.org/wiki/Example_images#/media/File:Example.jpg -o Example2.jpg`
 
-curl GET with custom CA example
+#####curl GET with custom CA example
 
 `$ docker run -it --rm -v /yourcertlocation/:/usr/local/share/ca-certificates/ -e CUSTOM_CA=true embrasure/cleanroom curl -X GET https://example.org`
 
-HTTPie GET with custom CA example
+#####HTTPie GET with custom CA example
 
 `$ docker run -it --rm -v /yourcertlocation/:/usr/local/share/ca-certificates/ -e CUSTOM_CA=true embrasure/cleanroom http https://example.org`
