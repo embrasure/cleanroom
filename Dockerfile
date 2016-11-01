@@ -1,11 +1,19 @@
-FROM debian:jessie
+FROM alpine:latest
 
 MAINTAINER Luke Sigler <lukesigler@outlook.com>
 
 ENV CUSTOM_CA false
 
-RUN apt-get -y update && \
-    apt-get install -y curl git zip httpie gettext-base build-essential ca-certificates && rm -rf /var/lib/apt/lists/*
+RUN apk update && apk add \
+    curl \
+    git \
+    zip \
+    ca-certificates \
+	python \
+	py-pip \
+	&& rm -rf /var/cache/apk/*
+
+RUN pip install httpie httpie-unixsocket httpie-oauth httpie-http2
 
 RUN curl -L https://github.com/aelsabbahy/goss/releases/download/v0.2.1/goss-linux-amd64 > /usr/local/bin/goss && chmod +rx /usr/local/bin/goss
 

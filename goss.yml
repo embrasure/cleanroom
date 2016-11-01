@@ -3,3 +3,7 @@ package:
     installed: true
   httpie:
     installed: true
+  git:
+    installed: true
+  zip:
+    installed: true    
