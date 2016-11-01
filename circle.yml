@@ -10,7 +10,7 @@ dependencies:
     - cp goss.yml ./goss
 test:
   override:
-    - docker run -it --rm -v $(pwd)/goss:/tmp/goss embrasure/cleanroom goss -g /tmp/goss/goss.yml validate --format junit >> $CIRCLE_TEST_REPORTS/report.xml
+    - docker run -it --rm http example.org
 deployment:
   hub:
     branch: master
