@@ -10,7 +10,7 @@ dependencies:
     - cp goss.yml ./goss
 test:
   override:
-    - docker run -it --rm http example.org
+    - echo "a test should go here..."
 deployment:
   hub:
     branch: master
